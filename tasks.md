@@ -1,0 +1,27 @@
+## Tasks e Desafios
+
+- Mad Libs
+- Adivinhe o número (computador)
+- Adivinhe o número (usuário)
+- Pedra, papel e tesoura
+- Forca
+- Contagem regressiva
+- Gerador de senhas
+- Codificador/decodificador de QR code
+- Jogo da velha
+- Jogo da velha com AI
+- Pesquisa binária
+- Campo minado
+- Solucionador de Sudoku
+- Manipulação de fotos em Python
+- Criador de textos com cadeias de Markov
+- Pong
+- Jogo da cobrinha
+- Ligue-4
+- Tetris
+- Jogo multiplayer on-line
+- Programa de web scraping
+- Renomeador de arquivos em massa
+- Programa de previsão do tempo
+- Programar um bot do Discord com Python e hospedá-lo de graça na nuvem
+- Jogo Space Invaders
