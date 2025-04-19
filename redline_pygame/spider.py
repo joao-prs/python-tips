@@ -8,7 +8,7 @@ pygame.init()
 # Configurações da janela
 WIDTH, HEIGHT = 900, 900
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Teia da Aranha")
+pygame.display.set_caption("spiders's lines by jprs.drw")
 
 # Cores
 SPIDER_COLORS = [
@@ -30,11 +30,11 @@ PADDING = 50
 BOX_RECT = pygame.Rect(PADDING, PADDING, WIDTH - 2 * PADDING, HEIGHT - 2 * PADDING)
 
 # Velocidade da bolinha (quanto menor, mais rápido)
-speed = 10
+speed = 20
 
 # Configurações das aranhas
-num_spiders = 6  # Número de aranhas (ajuste conforme necessário)
-max_lines = 50    # Número total de linhas
+num_spiders = 45  # Número de aranhas (ajuste conforme necessário)
+max_lines = 350    # Número total de linhas
 lines_per_spider = max_lines // num_spiders
 default_dot_radius = 8  # Raio padrão quando a aranha está ativa
 
@@ -166,8 +166,9 @@ while running:
     
     # Número total de linhas (texto)
     total_lines = sum(spider["lines_drawn"] for spider in spiders)
-    text = font.render(f"Total Lines: {total_lines}/{max_lines}", True, (200, 200, 200))
-    screen.blit(text, (20, 20))
+    #text = font.render(f"Total Lines: {total_lines}/{max_lines}", True, (30, 96, 110))
+    text = font.render(f"{max_lines} lines", True, (30, 96, 110))
+    screen.blit(text, (PADDING, 20))
     
     # Linhas por aranha (texto)
     #for i, spider in enumerate(spiders):
@@ -179,7 +180,7 @@ while running:
     # Mostra mensagem quando todas completarem (texto)
     if all_complete:
         font = pygame.font.SysFont(None, 30)
-        texto_completo = font.render("All Spiders Done!", True, (200, 200, 200))
+        texto_completo = font.render("All Spiders Done!", True, (30, 96, 110))
         text_rect = texto_completo.get_rect(center=(WIDTH//2, 30))
         screen.blit(texto_completo, text_rect)
 
