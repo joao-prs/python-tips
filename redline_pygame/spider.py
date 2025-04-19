@@ -16,8 +16,6 @@ LINE_1_COLOR = (30, 96, 110)
 LINE_2_COLOR = (90, 185, 168)
 BG_COLOR = (29, 18, 0)
 
-
-
 # Configurações da área quadrada
 PADDING = 100
 BOX_RECT = pygame.Rect(PADDING, PADDING, WIDTH - 2 * PADDING, HEIGHT - 2 * PADDING)
