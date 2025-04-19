@@ -24,19 +24,21 @@ LINE_COLORS = [
     #(110, 96, 30),    # Amarelo-esverdeado
 ]
 BG_COLOR = (29, 18, 0)
+speed = 20
 
 # Configurações da área quadrada
 PADDING = 50
 BOX_RECT = pygame.Rect(PADDING, PADDING, WIDTH - 2 * PADDING, HEIGHT - 2 * PADDING)
 
-# Velocidade da bolinha (quanto menor, mais rápido)
-speed = 20
-
 # Configurações das aranhas
-num_spiders = 45  # Número de aranhas (ajuste conforme necessário)
 max_lines = 350    # Número total de linhas
+num_spiders = 45  # Número de aranhas (ajuste conforme necessário)
+default_dot_radius = 2  # Raio padrão quando a aranha está ativa
+
+#line
+line_size = 1
+line_size_creating = 2
 lines_per_spider = max_lines // num_spiders
-default_dot_radius = 8  # Raio padrão quando a aranha está ativa
 
 def random_wall_point():
     """Gera um ponto aleatório em uma das paredes do quadrado"""
@@ -149,12 +151,12 @@ while running:
     # Desenha todas as linhas de todas as aranhas
     for spider in spiders:
         for line in spider["lines"]:
-            pygame.draw.line(screen, spider["line_color"], line[0], line[1], 2)
+            pygame.draw.line(screen, spider["line_color"], line[0], line[1], line_size)
 
     # Desenha as linhas em construção
     for spider in spiders:
         if spider["current_line"] and spider["target"] and spider["active"]:
-            pygame.draw.line(screen, spider["line_color"], spider["current_line"][0], spider["pos"], 3)
+            pygame.draw.line(screen, spider["line_color"], spider["current_line"][0], spider["pos"], line_size_creating)
 
     # Desenha as aranhas (só as ativas terão dot_radius > 0)
     for spider in spiders:
@@ -178,11 +180,11 @@ while running:
     #    screen.blit(text, (20, 60 + i * 30))
 
     # Mostra mensagem quando todas completarem (texto)
-    if all_complete:
-        font = pygame.font.SysFont(None, 30)
-        texto_completo = font.render("All Spiders Done!", True, (30, 96, 110))
-        text_rect = texto_completo.get_rect(center=(WIDTH//2, 30))
-        screen.blit(texto_completo, text_rect)
+    #if all_complete:
+    #    font = pygame.font.SysFont(None, 30)
+    #    texto_completo = font.render("All Spiders Done!", True, (30, 96, 110))
+    #    text_rect = texto_completo.get_rect(center=(WIDTH//2, 30))
+    #    screen.blit(texto_completo, text_rect)
 
     pygame.display.flip()
     clock.tick(60)
