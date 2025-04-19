@@ -70,6 +70,5 @@ while running:
 
     # Controla a taxa de frames
     pygame.time.Clock().tick(60)
-
-# Encerra o pygame
+    
 pygame.quit()
