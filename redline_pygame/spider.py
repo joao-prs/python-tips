@@ -11,9 +11,12 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Teia da Aranha")
 
 # Cores
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-BG_COLOR = (30, 30, 30)
+SPIDER_COLOR = (196, 240, 194)
+LINE_1_COLOR = (30, 96, 110)
+LINE_2_COLOR = (90, 185, 168)
+BG_COLOR = (29, 18, 0)
+
+
 
 # Configurações da área quadrada
 PADDING = 100
@@ -23,7 +26,7 @@ BOX_RECT = pygame.Rect(PADDING, PADDING, WIDTH - 2 * PADDING, HEIGHT - 2 * PADDI
 speed = 100  # pixels por frame
 
 # Número máximo de linhas (ajuste este valor conforme necessário)
-max_lines = 25
+max_lines = 40
 
 # Estado da aranha
 points = []  # Pontos já conectados
@@ -33,7 +36,7 @@ dot_radius = 5
 teia_completa = False  # Flag para indicar que a teia está completa
 
 def random_wall_point():
-    """Gera um ponto aleatório em uma das paredes do quadrado"""
+    """Gera um ponto aleatório em uma das paSPIDER_COLORes do quadrado"""
     wall = random.choice(["top", "bottom", "left", "right"])
     if wall == "top":
         return (random.randint(BOX_RECT.left, BOX_RECT.right), BOX_RECT.top)
@@ -72,7 +75,7 @@ running = True
 
 while running:
     screen.fill(BG_COLOR)
-    pygame.draw.rect(screen, WHITE, BOX_RECT, 2)
+    pygame.draw.rect(screen, LINE_2_COLOR, BOX_RECT, 2)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -110,24 +113,25 @@ while running:
 
     # Desenha as linhas existentes
     for line in lines:
-        pygame.draw.line(screen, WHITE, line[0], line[1], 1)
+        pygame.draw.line(screen, LINE_1_COLOR, line[0], line[1], 1)
 
     # Desenha a linha atual em construção (só se não tiver completado)
     if current_line and spider["target"] and not teia_completa:
-        pygame.draw.line(screen, WHITE, current_line[0], spider["pos"], 1)
+        pygame.draw.line(screen, LINE_1_COLOR, current_line[0], spider["pos"], 1)
 
     # Desenha a bolinha (aranha)
-    pygame.draw.circle(screen, RED, (int(spider["pos"][0]), int(spider["pos"][1])), dot_radius)
+    pygame.draw.circle(screen, SPIDER_COLOR, (int(spider["pos"][0]), int(spider["pos"][1])), dot_radius)
 
     # Mostra o número de linhas criadas
     font = pygame.font.SysFont(None, 20)
-    text = font.render(f"Linhas: {len(lines)} / {max_lines}", True, WHITE)
+    #text = font.render(f"LINES: {len(lines)} / {max_lines}", True, LINE_2_COLOR)
+    text = font.render(f"LINES: {max_lines}", True, LINE_2_COLOR)
     screen.blit(text, (50, 20))
 
     # Mostra mensagem quando a teia estiver completa
     if teia_completa:
         font = pygame.font.SysFont(None, 30)
-        texto_completo = font.render("finally", True, WHITE)
+        texto_completo = font.render("Done!", True, LINE_2_COLOR)
         text_rect = texto_completo.get_rect(center=(WIDTH//2, 30))
         screen.blit(texto_completo, text_rect)
 
