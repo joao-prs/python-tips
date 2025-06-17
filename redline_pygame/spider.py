@@ -24,19 +24,19 @@ LINE_COLORS = [
     #(110, 96, 30),    # Amarelo-esverdeado
 ]
 BG_COLOR = (29, 18, 0)
-speed = 20
+speed = 30
 
 # Configurações da área quadrada
 PADDING = 50
 BOX_RECT = pygame.Rect(PADDING, PADDING, WIDTH - 2 * PADDING, HEIGHT - 2 * PADDING)
 
 # Configurações das aranhas
-max_lines = 350    # Número total de linhas
-num_spiders = 45  # Número de aranhas (ajuste conforme necessário)
+max_lines = 40    # Número total de linhas
+num_spiders = 5  # Número de aranhas (ajuste conforme necessário)
 default_dot_radius = 2  # Raio padrão quando a aranha está ativa
 
 #line
-line_size = 1
+line_size = 3
 line_size_creating = 2
 lines_per_spider = max_lines // num_spiders
 
