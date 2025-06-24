@@ -19,13 +19,13 @@ sns.scatterplot(
     x='Mes',
     hue='Campus/Unidade',   # random cor
     palette='tab10',        # cores
-    s=100                   # ponto
+    s=70                   # ponto
 )
 
 plt.xlabel('Quantidade (m³)')
 plt.ylabel('Mes')
 plt.title('Dispersão por Campus/Unidade')
-plt.grid(True)
+plt.grid(False)
 plt.legend(title='Campus')
 plt.tight_layout()
 plt.show()
