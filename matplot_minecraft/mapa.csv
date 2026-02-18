@@ -1,0 +1,10 @@
+nome,x,y,z,cor_ponto,cor_texto
+limite_norte,1,1,-2000,#0000ff30,ff00ff60
+limite_sul,1,1,2000,#0000ff30,ff00ff60
+limite_oeste,-2000,1,1,#0000ff30,ff00ff60
+limite_leste,2000,1,1,#0000ff30,ff00ff60
+Joao__tristao,-90,103,-61,#0000ff,0000ff
+portal_joao2,-737,91,616,#0000ff,0000ff
+Fred,1,42,-1,#0000ff,0000ff
+portal1,-90,54,4,#0000ff,0000ff
+portal2,-20,73,-74,#0000ff,0000ff
